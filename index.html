@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SaludFácil - Navega tu sistema de salud</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+        </svg>
+        <span class="text-xl font-bold text-gray-900">SaludFácil</span>
+      </div>
+      <button id="loginBtn" class="btn-primary">Iniciar sesión</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container mx-auto px-6 py-20 text-center max-w-4xl">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Navega tu sistema de salud fácilmente
+      </h1>
+      <p class="text-lg text-gray-600 mb-10">Encuentra clínicas, haz reclamos y defiende tus derechos con tu EPS.</p>
+      
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="searchInput"
+          placeholder="¿Qué necesitas? Ej: cambiar de EPS, cita médica..." 
+          class="search-input"
+        />
+        <button id="searchBtn" class="search-btn">Buscar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-6">
+    <div class="container mx-auto max-w-5xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">¿Qué puedes hacer?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card">
+          <div class="text-4xl mb-4">🏥</div>
+          <h3 class="text-lg font-semibold mb-2">Buscar clínicas</h3>
+          <p class="text-gray-600 text-sm">Encuentra servicios cerca de ti, por tu EPS.</p>
+        </div>
+        <div class="card">
+          <div class="text-4xl mb-4">📝</div>
+          <h3 class="text-lg font-semibold mb-2">Hacer un reclamo</h3>
+          <p class="text-gray-600 text-sm">Guía paso a paso para reclamar a tu EPS.</p>
+        </div>
+        <div class="card">
+          <div class="text-4xl mb-4">🔄</div>
+          <h3 class="text-lg font-semibold mb-2">Cambiar de EPS</h3>
+          <p class="text-gray-600 text-sm">Aprende cómo y cuándo puedes hacerlo.</p>
+        </div>
+        <div class="card">
+          <div class="text-4xl mb-4">❓</div>
+          <h3 class="text-lg font-semibold mb-2">Preguntar al chatbot</h3>
+          <p class="text-gray-600 text-sm">Resuelve tus dudas sobre tu salud.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resultados" class="py-12 px-6 hidden">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="text-2xl font-bold mb-6">Resultados</h2>
+      <div id="lista-servicios" class="space-y-4"></div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 px-6 text-center">
+    <div class="container mx-auto max-w-2xl">
+      <h2 class="text-2xl font-bold mb-4">¿Listo para empezar?</h2>
+      <p class="text-gray-600 mb-8">Regístrate y empieza a usar SaludFácil hoy mismo.</p>
+      <button class="btn-primary">Probar gratis</button>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-8 text-center text-sm">
+    © 2025 SaludFácil – Empoderando tu salud en Colombia
+  </footer>
+
+  <!-- Chatbot flotante -->
+  <div class="chatbot-toggle" id="chatbotToggle">
+    <i data-feather="message-circle"></i>
+  </div>
+
+  <div class="chatbot-panel" id="chatbotPanel">
+    <div class="chatbot-header">
+      <h3>SaludBot</h3>
+      <i data-feather="x" id="closeChat" class="cursor-pointer"></i>
+    </div>
+    <div class="chatbot-body">
+      ¡Hola! ¿En qué puedo ayudarte con tu EPS o salud?
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" placeholder="Escribe tu pregunta..." class="chat-input" />
+      <button class="send-btn">➤</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>feather.replace();</script>
+</body>
+</html>
